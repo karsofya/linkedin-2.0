@@ -1,6 +1,16 @@
-def my1function():
-    print("Hello, world!")
+from textblob import Word
+import re
 
-# Call the function
-my1function
+def check_word_spelling(word):
 
+    word = Word(word)
+
+    result = word.spellcheck()
+
+    if word == result[0][0]:
+        print(f'Spelling of "{word}" is correct!')
+    else:
+        print(f'Spelling of "{word}" is not correct!')    
+        print(f'correct spelling of "{word}": "{result[0][0]}" (with {round(result[0][1], 2)} confidence)')
+
+check_word_spelling(input("Enter word: "))
