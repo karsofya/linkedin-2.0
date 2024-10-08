@@ -13,4 +13,5 @@ def check_word_spelling(word):
         print(f'Spelling of "{word}" is not correct!')    
         print(f'correct spelling of "{word}": "{result[0][0]}" (with {round(result[0][1], 2)} confidence)')
 
-check_word_spelling(input("Enter word: "))
+if __name__ == "__main__":
+   check_word_spelling(input("Enter word: "))
